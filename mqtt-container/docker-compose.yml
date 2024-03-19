@@ -4,6 +4,10 @@ services:
   mqtt5:
     image: eclipse-mosquitto
     container_name: mqtt5
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
     ports:
       - "1883:1883" #default mqtt port
       - "9011:9001" #default mqtt port for websockets
